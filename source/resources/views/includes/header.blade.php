@@ -28,9 +28,9 @@
         <div class="widget  ">
             <div class="vs-widget-about">
                 <div class="footer-logo">
-                <a href="{{ url('') }}"><img src="{{ asset('template_v1/img/logo/logo_eds_color.png') }}" alt="Logo Eraya Digital Solusindo"></a>
+                <a href="{{ url('') }}"><img style="width: 88%" src="{{ asset('template_v1/img/logo/logo_eds_color.png') }}" alt="Logo Eraya Digital Solusindo"></a>
                 </div>
-                <p class="footer-text" style="text-align:justify">Didirikan pada tahun 2024, kami adalah software house profesional yang berpengalaman dalam menyediakan solusi Digital dan TI untuk berbagai organisasi. Kami telah melayani banyak klien di seluruh Indonesia, mulai dari UKM, perusahaan besar, hingga instansi pemerintah. Dengan semangat dan ketajaman intuisi, kami membantu pertumbuhan bisnis secara optimal dan berkelanjutan.</p>
+                <p class="footer-text" style="text-align:justify">Didirikan pada tahun 2024, kami adalah software house profesional yang berpengalaman dalam menyediakan solusi Digital, TI, Pemanfaatan AI, dan IoT untuk berbagai organisasi. Kami telah melayani banyak klien di seluruh Indonesia, mulai dari UKM, perusahaan besar, hingga instansi pemerintah. Dengan memadukan semangat, ketajaman intuisi, dan pemanfaatan AI melalui IoT — seperti monitoring cerdas, otomatisasi berbasis data, dan agen AI — kami membantu pertumbuhan bisnis secara optimal dan berkelanjutan.</p>
                 <div class="info-social style3">
                     <a class="icon-btn" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="icon-btn" href="#"><i class="fab fa-twitter"></i></a>
@@ -79,11 +79,11 @@
         <div class="sticky-active">
             <div class="container">
                 <div class="menu-bg">
-                    <div class="row position-relative align-items-center">
+                    <div class="row position-relative">
                         <div class="col-auto">
                             <div class="header-logo">
                                 <a href="{{ url('') }}">
-                                    <img style="width: 200px" src="{{ asset('template_v1/img/logo/logo_eds_color.png') }}" alt="Logo Eraya Digital Solusindo">
+                                    <img style="width: 200px;margin-top:-10px" src="{{ asset('template_v1/img/logo/logo_eds_color.png') }}" alt="Logo Eraya Digital Solusindo">
                                 </a>
                             </div>
                         </div>

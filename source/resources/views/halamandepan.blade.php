@@ -31,9 +31,9 @@ Hero Area
                         <div class="col-lg-8">
                             <div class="hero-content text-center">
                                 <div class="title-area text-center">
-                                    <span class="sec-subtitle">Konsultasi Pajak dan Akuntansi</span>
-                                    <h2 class="sec-title h1 mb-20">Orang Bijak <span>Taat</span> Pajak Dan Awasi Penggunaannya</h2>
-                                    <p class="sec-text">Konsultan pajak membantu mengurus hal-hal yang berkaitan dengan kepatuhan pajak kliennya, mulai dari menghitung, membayar, juga melaporkannya. Konsultan pajak menawarkan jasa konsultansi masalah perpajakan, selain itu juga bisa melakukan perencanaan pajak untuk mengoptimalkan keuntungan klien.</p>
+                                    <span class="sec-subtitle">Pemanfaatan AI & AI Agentic</span>
+                                    <h2 class="sec-title h1 mb-20">Kerja Cerdas dengan <span>AI Agentic</span> dan Otomatisasi</h2>
+                                    <p class="sec-text">Kami membangun agen AI, asisten cerdas, dan alur otomatisasi yang membantu bisnis Anda bekerja lebih cepat — mulai dari customer service otomatis, analisis data, hingga integrasi AI ke aplikasi dan operasional harian Anda.</p>
                                 </div>
                                 <div class="hero-bottom">
                                     <a href="javascript:void(0)" class="vs-btn">Konsultasi Yuk</a>
@@ -192,11 +192,11 @@ Hero Area
                 <div class="about-content">
                     <div class="title-area text-left wow fadeInUp wow-animated" data-wow-delay="0.3s">
                         <span class="sec-subtitle2">Kami Siapa ?</span>
-                        <h2 class="sec-title">Mitra Tepercaya Anda Untuk Bisnis Digital</h2>
+                        <h2 class="sec-title">Mitra Tepercaya Digitalisasi UMKM dengan AI, IoT & ERP</h2>
                     </div>
                     <div class="about-body">
                         <p class="about-text" style="text-align: justify;margin-top:-30px">
-                            Kami adalah mitra yang terpercaya untuk bisnis digital Anda. Dengan layanan IT yang komprehensif, kami membantu Anda memaksimalkan potensi digital Anda. Dari pengembangan aplikasi kustom hingga integrasi cloud yang lancar, kami menyediakan layanan IT yang dirancang untuk mempercepat transformasi digital Anda.
+                            PT. Eraya Digital Solusindo adalah mitra terpercaya untuk transformasi digital, digitalisasi UMKM, implementasi ERP, pemanfaatan AI dan AI Agentic, serta solusi IoT di Indonesia. Dengan layanan IT komprehensif — mulai dari pengembangan aplikasi kustom, sistem ERP terintegrasi, integrasi cloud, otomatisasi berbasis AI, hingga monitoring IoT real-time — kami membantu bisnis Anda meningkatkan efisiensi, produktivitas, dan daya saing secara optimal dan berkelanjutan.
                         </p>
                         <div class="counter-style2">
                             <div class="media-style">
@@ -261,7 +261,7 @@ Hero Area
                             </p>
                             </a>
                         </div>
-                        <a href="service-details.html" class="icon-btn"><i
+                        <a href="{{ route('layanan.email') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -279,12 +279,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/developer.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)">Pengembangan Aplikasi</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'pengembangan-aplikasi') }}">Pengembangan Aplikasi</a></h2>
                             <p class="service-text text-center">
                                 Ingin merubah bisnis manual kamu menjadi digital agar dapat termonitoring secara akurat dan mudah serta dilihat banyak orang.
                             </p>
                         </div>
-                        <a href="service-details.html" class="icon-btn"><i
+                        <a href="{{ route('layanan.detail', 'pengembangan-aplikasi') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -301,13 +301,36 @@ Hero Area
                 <div class="service-wrap">
                     <div class="service-style1">
                         <div class="service-body">
-                            <img src="{{ asset('template_v1/img/icon/konsultan_pajak.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)">Pajak dan Akuntansi</a></h2>
+                            <img src="{{ asset('template_v1/img/icon/logo_ai.svg') }}" alt="icon">
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'ai-otomatisasi') }}">AI Agentic</a></h2>
                             <p class="service-text text-center">
-                                Kami akan mengumpulkan informasi tentang situasi keuangan klien dan menyusun strategi, untuk membantu mengurangi kewajiban pajak dengan mengambil keuntungan dari kredit dan pemotongan pajak.
+                                Kami membangun chatbot, agen AI, dan otomatisasi alur kerja untuk memangkas pekerjaan manual, mempercepat layanan, dan mengoptimalkan operasional bisnis Anda.
                             </p>
                         </div>
-                        <a href="service-details.html" class="icon-btn"><i
+                        <a href="{{ route('layanan.detail', 'ai-otomatisasi') }}" class="icon-btn"><i
+                                class="fa-regular fa-arrow-right"></i></a>
+                        <div class="shep-btn">
+                            <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 0C19.33 0 35 15.67 35 35V41C35 50.33 50.67 76 75 76H76C95.33 76 111 91.67 111 111V0H0Z"
+                                    fill="none"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="service-wrap">
+                    <div class="service-style1">
+                        <div class="service-body">
+                            <img src="{{ asset('template_v1/img/icon/logo_iot.svg') }}" alt="icon">
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'iot-smart-devices') }}">IoT & Smart Devices</a></h2>
+                            <p class="service-text text-center">
+                                Kami merancang solusi Internet of Things (IoT) — monitoring sensor, smart device, dan integrasi cloud — untuk memantau aset, ruangan, dan operasional secara real-time.
+                            </p>
+                        </div>
+                        <a href="{{ route('layanan.detail', 'iot-smart-devices') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -325,12 +348,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/umkm.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)">UMKM</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'umkm-digital') }}">UMKM</a></h2>
                             <p class="service-text text-center">
                                 Mengembangkan usaha anda dengan bantuan teknologi, ayo konsultasikan masalah anda kepada kami serta akan membantu sepenuh hati
                             </p>
                         </div>
-                        <a href="service-details.html" class="icon-btn"><i
+                        <a href="{{ route('layanan.detail', 'umkm-digital') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -348,12 +371,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/devops.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="service-details.html">Dev OPS</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'devops-maintenance') }}">Dev OPS</a></h2>
                             <p class="service-text text-center">
                                 Membutuhkan jasa untuk merawat infrastruktur anda seperti server, jaringan lokal , database, dsb. Jangan khawatir kami sudah terbiasa.
                             </p>
                         </div>
-                        <a href="service-details.html" class="icon-btn"><i
+                        <a href="{{ route('layanan.detail', 'devops-maintenance') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -421,7 +444,7 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-1.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Ariza-Agung&size=400&backgroundColor=0ea5e9" alt="Ariza Agung P - Marketing" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Ariza Agung P</a>
@@ -439,12 +462,12 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-1.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Erfan-Huda&size=400&backgroundColor=8b5cf6" alt="Erfan Huda - Marketing" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Erfan Huda</a>
                         </h4>
-                        <span class="degi">Konsultan Pajak dan Akuntan</span>
+                        <span class="degi">Marketing Eraya Digital</span>
                         <div class="member-links">
                             <a class="icon-btn" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="icon-btn" href="#"><i class="fab fa-twitter"></i></a>
@@ -457,11 +480,11 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-2.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Aries-AI&size=400&backgroundColor=06b6d4" alt="Mochamad Aries S - AI Engineer" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Mochamad Aries S</a></h4>
-                        <span class="degi">Sistem Analis</span>
+                        <span class="degi">AI Engineer</span>
                         <div class="member-links">
                             <a class="icon-btn" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="icon-btn" href="#"><i class="fab fa-twitter"></i></a>
@@ -474,7 +497,7 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-3.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Ryan-Dony&size=400&backgroundColor=10b981" alt="Ryan Dony Pratama - Senior Programmer" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Ryan Dony Pratama</a></h4>
@@ -491,7 +514,7 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-4.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Yoppi-Niko&size=400&backgroundColor=f59e0b" alt="Yoppi Niko Ifandika - Senior Programmer" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Yoppi Niko Ifandika</a>
@@ -509,7 +532,7 @@ Hero Area
             <div class="col-lg-3">
                 <div class="team-style2">
                     <div class="team-img">
-                        <img src="{{asset('template_v1/img/team/team-img-2-5.jpg')}}" alt="team-img">
+                        <img src="https://api.dicebear.com/9.x/bottts-neutral/png?seed=Rozikin-DevOps&size=400&backgroundColor=3b82f6" alt="Achmad Rozikin - DevOps Spesialis" style="width:200px;height:200px;object-fit:cover;" loading="lazy">
                     </div>
                     <div class="member-content">
                         <h4 class="member-name h5"><a class="team-title" href="team-details.html">Achmad Rozikin</a>
@@ -545,7 +568,7 @@ Hero Area
                 </div>
             </div>
         </div>
-        <div class="row g-5 space-extra-bottom">
+        <!-- <div class="row g-5 space-extra-bottom">
             <div class="col-lg-12">
                 <div class="row vs-carousel blog-slider" data-slide-show="3" data-lg-slide-show="2"
                     data-md-slide-show="2" data-autoplay="true" data-arrows="false">
@@ -716,7 +739,7 @@ Hero Area
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="container z-index1 wow fadeInUp wow-animated" data-wow-delay="0.3s">
         <div class="brand-style2">
@@ -798,19 +821,115 @@ Hero Area
 .vs-btn{
     border-radius: 20px;
 }
+/* ===== Layanan: gambar rata & rapi ===== */
+#layanan_kami .service-style1{
+    height: 100%;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    padding: 36px 26px 60px;
+}
+#layanan_kami .service-style1 .service-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+#layanan_kami .service-style1 .service-body a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    flex: 1;
+}
+#layanan_kami .service-style1 .service-body img{
+    width: 256px;
+    height: 256px;
+    min-width: 256px;
+    min-height: 256px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 18px;
+}
+#layanan_kami .service-style1 .service-title{
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+#layanan_kami .service-style1 .service-text{
+    min-height: 120px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+}
+/* samakan tinggi antar slide carousel */
+#layanan_kami .vs-carousel .slick-track{
+    display: flex;
+    align-items: stretch;
+}
+#layanan_kami .vs-carousel .slick-slide{
+    height: inherit;
+}
+#layanan_kami .vs-carousel .slick-slide > div,
+#layanan_kami .service-wrap{
+    height: 100%;
+}
 .brand-item-oke {
     background-color: white !important;
-    padding: 35px 40px;
+    padding: 20px;
     border-radius: 20px;
-    height: auto;
+    height: 150px;
+    min-height: 150px;
     max-width: 240px;
-    width: 100%;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     cursor: pointer;
-    margin: auto;
+    margin: 0 auto;
 }
 .brand-item-oke img {
+    max-width: 170px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     transition: all 0.5s ease;
+}
+.brand-style2 .vs-carousel .slick-track{
+    display: flex;
+    align-items: stretch;
+}
+.brand-style2 .vs-carousel .slick-slide{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: inherit;
+}
+.brand-style2 .col-auto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.brand-style2 .media-info{
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 12px !important;
+    line-height: 1.5;
 }
 </style>
 @endsection

@@ -1,12 +1,12 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>PT. Eraya Digital Solusindo | Solusi Digital untuk UMKM, Startup, dan Konsultan Pajak</title>
+<title>PT. Eraya Digital Solusindo | Solusi Digital, AI Agentic, Otomatisasi & IoT untuk UMKM dan Startup</title>
 <meta name="author" content="PT. Eraya Digital Solusindo">
-<meta name="description" content="PT. Eraya Digital Solusindo membantu UMKM, Pemerintah, Individual, dan konsultan pajak berkembang dengan teknologi digital terkini." />
-<meta name="keywords" content="Solusi digital, IT untuk UMKM, teknologi bisnis, startup, konsultan pajak, PT. Eraya Digital Solusindo, jasa pembuatan website, jasa pembuatan aplikasi, software house malang, software house jakarta, konsultan it malang, konsultan pajak malang, konsultan pajak jakarta, konsultan it jakarta">
+<meta name="description" content="PT. Eraya Digital Solusindo membantu UMKM, Pemerintah, Individual, dan Startup berkembang dengan Pemanfaatan AI, AI Agentic, Otomatisasi, dan IoT terkini." />
+<meta name="keywords" content="Solusi digital, IT untuk UMKM, teknologi bisnis, startup, Pemanfaatan AI, AI Agentic, Otomatisasi, IoT, PT. Eraya Digital Solusindo, jasa pembuatan website, jasa pembuatan aplikasi, software house malang, software house jakarta, konsultan it malang, konsultan AI malang, konsultan IoT jakarta, konsultan it jakarta">
 <meta name="robots" content="INDEX,FOLLOW">
 <meta property="og:title" content="PT. Eraya Digital Solusindo | Solusi Digital untuk Bisnis Anda">
-<meta property="og:description" content="Dukung pertumbuhan bisnis, UMKM, startup, dan konsultan pajak dengan solusi digital terbaik dari PT. Eraya Digital Solusindo.">
+<meta property="og:description" content="Dukung pertumbuhan bisnis, UMKM, dan startup dengan Pemanfaatan AI, AI Agentic, Otomatisasi, dan IoT terbaik dari PT. Eraya Digital Solusindo.">
 <meta property="og:image" content="https://erayadigital.co.id/template_v1/img/logo/logo_eds_color.png">
 <meta property="og:url" content="https://erayadigital.co.id">
 

@@ -26,10 +26,25 @@ class Landing extends Controller
         ];
     }
 
+    private function base_seo(array $overrides = []): array
+    {
+        return array_merge([
+            'image' => url('template_v1/img/logo/hanya_logo.jpg'),
+            'image_alt' => 'Logo PT. Eraya Digital Solusindo',
+            'type' => 'website',
+        ], $overrides);
+    }
+
     public function index()
     {
         $data['info_location'] = $this->get_info_location();
         $data['use_footer'] = true;
+        $data['seo'] = $this->base_seo([
+            'title' => 'PT. Eraya Digital Solusindo | Solusi Digital, AI Agentic, Otomatisasi & IoT untuk UMKM dan Startup',
+            'description' => 'PT. Eraya Digital Solusindo membantu UMKM, Pemerintah, Individu, dan Startup berkembang dengan Pemanfaatan AI, AI Agentic, Otomatisasi, dan IoT terkini — dari aplikasi, ERP, sampai monitoring real-time.',
+            'keywords' => 'Solusi digital, IT untuk UMKM, teknologi bisnis, startup, Pemanfaatan AI, AI Agentic, Otomatisasi, IoT, PT Eraya Digital Solusindo, jasa pembuatan website, jasa pembuatan aplikasi, software house malang, software house jakarta, konsultan it malang, konsultan AI malang, konsultan IoT jakarta, konsultan it jakarta',
+            'canonical' => url('/'),
+        ]);
         return view('halamandepan', $data);
     }
 
@@ -37,6 +52,12 @@ class Landing extends Controller
     {
         $data['info_location'] = $this->get_info_location();
         $data['use_footer'] = false;
+        $data['seo'] = $this->base_seo([
+            'title' => 'Email Profesional untuk Bisnis (nama@perusahaan.co.id) | Eraya Digital',
+            'description' => 'Buat email bisnis profesional nama@perusahaan.co.id dengan cepat dan aman. Anti-spam, webmail, kapasitas besar — mulai Rp 30rb/bulan. Cocok untuk UMKM, sekolah, dan perusahaan.',
+            'keywords' => 'email profesional, mail server, email bisnis, email perusahaan, jasa email bisnis malang, jasa email bisnis jakarta, Eraya Digital',
+            'canonical' => route('layanan.email'),
+        ]);
         return view('halamanemailprofesional', $data);
     }
 
@@ -44,6 +65,12 @@ class Landing extends Controller
     {
         $data['info_location'] = $this->get_info_location();
         $data['use_footer'] = true;
+        $data['seo'] = $this->base_seo([
+            'title' => 'Hubungi Kami — Konsultasi Gratis | PT. Eraya Digital Solusindo',
+            'description' => 'Hubungi tim Eraya Digital di Jakarta & Malang untuk konsultasi gratis solusi digital, AI, IoT, dan maintenance server. Fast respon via telepon, email hallo@erayadigital.co.id, dan form online.',
+            'keywords' => 'hubungi eraya digital, kontak software house malang, konsultan IT jakarta, konsultasi AI gratis, Eraya Digital Solusindo',
+            'canonical' => route('layanan.hubungi_kami'),
+        ]);
         return view('hubungikami', $data);
     }
 
@@ -67,6 +94,14 @@ class Landing extends Controller
         // layanan terkait: ambil 3 selain yang aktif
         $terkait = collect($semua)->filter(fn($v, $k) => $k !== $slug && $k !== 'email-profesional')->take(3);
         $data['terkait'] = $terkait;
+        $lay = $semua[$slug];
+        $data['seo'] = $this->base_seo([
+            'title' => $lay['judul'] . ' — ' . $lay['badge'] . ' | Eraya Digital',
+            'description' => $lay['subjudul'],
+            'keywords' => $lay['badge'] . ', ' . $lay['judul'] . ', jasa ' . strtolower($lay['badge']) . ' malang, jasa ' . strtolower($lay['badge']) . ' jakarta, Eraya Digital Solusindo',
+            'canonical' => route('layanan.detail', $slug),
+            'type' => 'article',
+        ]);
 
         return view('halamanlayanandetail', $data);
     }

@@ -1,0 +1,21 @@
+{
+  "name": "PT. Eraya Digital Solusindo",
+  "short_name": "Eraya Digital",
+  "description": "Solusi Digital, AI Agentic, Otomatisasi & IoT untuk UMKM dan Startup",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/template_v1/img/logo/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/template_v1/img/logo/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

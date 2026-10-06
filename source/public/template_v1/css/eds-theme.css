@@ -1,0 +1,296 @@
+/* ============================================================
+   EDS Theme: light mode overrides
+   - Default (dark) = style.css apa adanya, tanpa override.
+   - Semua aturan di bawah hanya aktif saat <html data-theme="light">.
+   - Footer + header-top + modal sengaja dibiarkan gelap agar kontras.
+   ============================================================ */
+
+/* ---------- 1. Variabel scoped light ---------- */
+[data-theme="light"]{
+  --body-bg:#F3F6FB;
+  --border-color:#DCE6F2;
+}
+
+/* ---------- 2. Base ---------- */
+[data-theme="light"] body{
+  background-color:#F3F6FB !important;
+  color:#334155;
+}
+[data-theme="light"] .sec-title{color:#0F2540 !important}
+[data-theme="light"] .sec-title span{color:#B45309 !important}
+[data-theme="light"] .sec-subtitle{color:#B45309 !important}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,
+[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,
+[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,
+[data-theme="light"] .h4,[data-theme="light"] .h5,[data-theme="light"] .h6{color:#0F2540}
+
+/* Teks deskriptif: eds-override memaksa #D3DDF0 !important untuk dark.
+   Di light mode kembalikan ke slate, KECUALI di dalam footer/header-top/hero-dark/modal. */
+[data-theme="light"] .sec-text,
+[data-theme="light"] .hero-layout1 .sec-text,
+[data-theme="light"] .title-area .sec-text,
+[data-theme="light"] .about-text,
+[data-theme="light"] .service-style1 .service-text,
+[data-theme="light"] .service-style3 .service-text,
+[data-theme="light"] .process-style2 .process-text,
+[data-theme="light"] .package-style1 .package-text,
+[data-theme="light"] .package-style1 .list-style1 ul li,
+[data-theme="light"] .faq-layout1 .accordion-body p,
+[data-theme="light"] .team-style2 .degi,
+[data-theme="light"] .media-info{color:#475569 !important}
+
+/* Footer & header-top tetap gelap: paksa terang kembali */
+[data-theme="light"] .footer-wrapper .footer-text,
+[data-theme="light"] .footer-wrapper .sec-text,
+[data-theme="light"] .footer-wrapper .media-info{color:#D3DDF0 !important}
+[data-theme="light"] .footer-wrapper .sec-title,
+[data-theme="light"] .footer-wrapper .widget_title{color:#fff !important}
+
+/* ---------- 3. Section background → terang ---------- */
+[data-theme="light"] .service-layout1{background-color:#F3F6FB !important}
+[data-theme="light"] .service-layout2{background-color:#E8EFF9 !important}
+[data-theme="light"] .process-layout1,
+[data-theme="light"] .faq-layout1,
+[data-theme="light"] .price-layout1,
+[data-theme="light"] .team-layout2,
+[data-theme="light"] .blog-layout1,
+[data-theme="light"] .brand-layout1,
+[data-theme="light"] .counter-layout1,
+[data-theme="light"] .testimonial-layout1,
+[data-theme="light"] .about-layout1,
+[data-theme="light"] .contact-layout1{background-color:#F3F6FB !important}
+[data-theme="light"] .bg-body2{background-color:#E8EFF9 !important}
+/* Section rekanan/blog: bg-title navy (!important) → terang di light mode */
+[data-theme="light"] .blog-layout2.bg-title{background-color:#F3F6FB !important}
+[data-theme="light"] .blog-layout2 .sec-subtitle2{color:#B45309 !important}
+
+/* ---------- 4. Kartu gelap → putih ---------- */
+[data-theme="light"] .service-style1,
+[data-theme="light"] .service-style3,
+[data-theme="light"] .process-style2 .process-item,
+[data-theme="light"] .package-style1,
+[data-theme="light"] .faq-layout1 .accordion-item,
+[data-theme="light"] .team-style2,
+[data-theme="light"] .blog-style1,
+[data-theme="light"] .price-style1,
+[data-theme="light"] .counter-style1,
+[data-theme="light"] .testimonial-style1{
+  background-color:#fff !important;
+  border:1px solid #E2E8F0 !important;
+  box-shadow:0 10px 30px rgba(15,37,64,.07);
+}
+[data-theme="light"] .service-style1 .service-title a{color:#0F2540 !important}
+[data-theme="light"] .service-style3 .service-title,
+[data-theme="light"] .service-style3 .service-title a{color:#0F2540 !important}
+[data-theme="light"] .service-style1:hover .service-title a,
+[data-theme="light"] .service-style1:hover .service-text{color:#0F2540 !important}
+[data-theme="light"] .service-style1 .service-icon{background-color:#E8EFF9 !important}
+[data-theme="light"] .package-style1 .list-style1{background-color:#F1F5F9 !important}
+[data-theme="light"] .package-style1 .list-style1 ul li{color:#334155 !important}
+[data-theme="light"] .package-style1 .package-name,
+[data-theme="light"] .package-style1 .package-price{color:#0F2540 !important}
+/* Judul proses (putih di dark) → navy di kartu putih */
+[data-theme="light"] .process-style2 .process-title{color:#0F2540 !important}
+[data-theme="light"] .process-style2 .process-icon{background-color:#E8EFF9 !important}
+/* Nama anggota tim (putih di dark) → navy di kartu putih */
+[data-theme="light"] .team-layout2 .member-name .team-title{color:#0F2540 !important}
+/* Kartu blog/rekanan (body-color navy) → putih + teks gelap */
+[data-theme="light"] .blog-style2{
+  background-color:#fff !important;
+  border:1px solid #E2E8F0 !important;
+  box-shadow:0 10px 30px rgba(15,37,64,.07);
+}
+[data-theme="light"] .blog-layout2 .blog-title a{color:#0F2540 !important}
+[data-theme="light"] .blog-layout2 .blog-meta a,
+[data-theme="light"] .blog-layout2 .blog-meta a i{color:#64748B !important}
+[data-theme="light"] .blog-style2 .shep-btn svg path{fill:#fff !important}
+
+/* SVG shape pemisah section (fill var(--body-bg)) → samakan light */
+[data-theme="light"] .service-style1 .shep-btn svg path,
+[data-theme="light"] .process-style2 .shep-btn svg path{fill:#F3F6FB !important}
+
+/* ---------- 5. Hero → terang ---------- */
+[data-theme="light"] .hero-layout1.style2{
+  background-image:none !important;
+  background:linear-gradient(180deg,#DBEAFE 0%,#EFF6FF 55%,#F3F6FB 100%) !important;
+}
+[data-theme="light"] .hero-layout1.style2 .sec-title{color:#0F2540 !important}
+[data-theme="light"] .hero-layout1.style2 .sec-title span{color:#025FCA !important}
+[data-theme="light"] .hero-layout1.style2 .sec-text{color:#475569 !important}
+[data-theme="light"] .hero-layout1.style2 .sec-subtitle{color:#B45309 !important}
+/* Breadcrumb pill di hero terang (Beranda / Syarat & Ketentuan / badge layanan) */
+[data-theme="light"] .hero-layout1.style2 .breadcrumb{background:rgba(15,37,64,.08) !important}
+[data-theme="light"] .hero-layout1.style2 .breadcrumb-item a{color:#025FCA !important}
+[data-theme="light"] .hero-layout1.style2 .breadcrumb-item.active{color:#0F2540 !important}
+[data-theme="light"] .hero-layout1.style2 .breadcrumb-item+.breadcrumb-item::before{color:#94A3B8 !important}
+/* Kartu kaca + trust-row di hero terang (halaman detail layanan) */
+[data-theme="light"] .hero-layout1.style2 div[style*="cfe8ff" i]{color:#334155 !important}
+[data-theme="light"] .hero-layout1.style2 div[style*="rgba(255,255,255,.09)"]{background:#fff !important;border-color:#E2E8F0 !important;box-shadow:0 10px 30px rgba(15,37,64,.08)}
+[data-theme="light"] .hero-layout1.style2 div[style*="rgba(255,255,255,.09)"] h3{color:#0F2540 !important}
+[data-theme="light"] .hero-layout1.style2 div[style*="rgba(255,255,255,.09)"] p{color:#475569 !important}
+/* Langit light mode: ganti bintang/meteor dengan matahari + awan berjalan */
+[data-theme="light"] .hero-layout1.style2 .star,
+[data-theme="light"] .hero-layout1.style2 [class*="meteor"]{display:none !important}
+[data-theme="light"] .hero-layout1.style2::before{
+  content:"";position:absolute;top:9%;right:8%;width:92px;height:92px;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle at 35% 35%,#FFF9DB 0%,#FFD43B 55%,#FFB300 100%);
+  box-shadow:0 0 50px 22px rgba(255,180,0,.35),0 0 120px 60px rgba(255,200,60,.18);
+  animation:eds-sun-pulse 6s ease-in-out infinite;
+}
+[data-theme="light"] .hero-layout1.style2::after{
+  content:"";position:absolute;top:16%;left:-260px;width:220px;height:64px;border-radius:999px;z-index:-1;
+  background:rgba(255,255,255,.95);
+  box-shadow:60px -22px 0 8px rgba(255,255,255,.95),120px -6px 0 2px rgba(255,255,255,.9),180px -20px 0 6px rgba(255,255,255,.95),240px 0 0 -2px rgba(255,255,255,.9);
+  filter:blur(1px);opacity:.9;
+  animation:eds-cloud-drift 55s linear infinite;animation-delay:-20s;
+}
+[data-theme="light"] .hero-layout1.style2 .hero-content::after{
+  content:"";position:absolute;top:4%;left:-180px;width:150px;height:44px;border-radius:999px;z-index:-1;
+  background:rgba(255,255,255,.8);
+  box-shadow:40px -16px 0 6px rgba(255,255,255,.8),84px -4px 0 0 rgba(255,255,255,.75),126px -14px 0 4px rgba(255,255,255,.8);
+  filter:blur(1px);opacity:.75;
+  animation:eds-cloud-drift 80s linear infinite;animation-delay:-30s;
+}
+[data-theme="light"] .hero-layout1.style2 .hero-content::before{
+  content:"";position:absolute;top:38%;left:-300px;width:260px;height:72px;border-radius:999px;z-index:-1;
+  background:rgba(255,255,255,.9);
+  box-shadow:70px -26px 0 10px rgba(255,255,255,.9),140px -8px 0 4px rgba(255,255,255,.85),210px -24px 0 8px rgba(255,255,255,.9),280px -4px 0 0 rgba(255,255,255,.8);
+  filter:blur(1px);opacity:.8;
+  animation:eds-cloud-drift 68s linear infinite;animation-delay:-45s;
+}
+[data-theme="light"] .hero-layout1.style2 .title-area::before{
+  content:"";position:absolute;top:58%;left:-240px;width:200px;height:58px;border-radius:999px;z-index:-1;
+  background:rgba(255,255,255,.85);
+  box-shadow:55px -20px 0 8px rgba(255,255,255,.85),110px -6px 0 2px rgba(255,255,255,.8),165px -18px 0 6px rgba(255,255,255,.85),220px 0 0 -2px rgba(255,255,255,.75);
+  filter:blur(1px);opacity:.7;
+  animation:eds-cloud-drift 90s linear infinite;animation-delay:-12s;
+}
+[data-theme="light"] .hero-layout1.style2 .title-area::after{
+  content:"";position:absolute;top:78%;left:-200px;width:170px;height:50px;border-radius:999px;z-index:-1;
+  background:rgba(255,255,255,.75);
+  box-shadow:48px -18px 0 6px rgba(255,255,255,.75),96px -5px 0 1px rgba(255,255,255,.7),144px -16px 0 5px rgba(255,255,255,.75);
+  filter:blur(1px);opacity:.6;
+  animation:eds-cloud-drift 75s linear infinite;animation-delay:-55s;
+}
+@keyframes eds-cloud-drift{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 600px))}}
+@keyframes eds-sun-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+@media (prefers-reduced-motion:reduce){
+  [data-theme="light"] .hero-layout1.style2::before,
+  [data-theme="light"] .hero-layout1.style2::after,
+  [data-theme="light"] .hero-layout1.style2 .hero-content::before,
+  [data-theme="light"] .hero-layout1.style2 .hero-content::after,
+  [data-theme="light"] .hero-layout1.style2 .title-area::before,
+  [data-theme="light"] .hero-layout1.style2 .title-area::after{animation:none}
+}
+[data-theme="light"] .hero-layout1.style2 .shape-mockup img{opacity:.5}
+
+/* Breadcrumb di atas hero terang */
+[data-theme="light"] .breadcumb-wrapper{background-color:#E8EFF9 !important}
+[data-theme="light"] .breadcumb-wrapper .breadcumb-title,
+[data-theme="light"] .breadcumb-wrapper .breadcrumb-item{color:#0F2540 !important}
+[data-theme="light"] .breadcumb-wrapper .breadcrumb-item a{color:#025FCA !important}
+
+/* ---------- 6. Header / menu / sidemenu ---------- */
+/* header-top & footer sengaja tetap gelap (kontras). Menu dropdown & mobile jadi putih. */
+[data-theme="light"] .main-menu ul.sub-menu,
+[data-theme="light"] .main-menu ul.mega-menu,
+[data-theme="light"] .vs-menu-area,
+[data-theme="light"] .sidemenu-content,
+[data-theme="light"] .mobile-logo{background-color:#fff !important}
+[data-theme="light"] .main-menu ul.sub-menu li a,
+[data-theme="light"] .vs-mobile-menu ul li a{color:#0F2540 !important}
+[data-theme="light"] .vs-mobile-menu ul li a:hover{color:#025FCA !important}
+[data-theme="light"] .sidemenu-content .footer-text{color:#475569 !important}
+[data-theme="light"] .header-layout2 .menu-style1 > ul > li > a{color:#0F2540}
+[data-theme="light"] .header-layout2 .sticky-active.active{background-color:#3EC964}
+
+/* ---------- 7. Form ---------- */
+[data-theme="light"] .form-control,
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] textarea,
+[data-theme="light"] select{
+  background-color:#fff !important;
+  color:#334155 !important;
+  border-color:#DCE6F2 !important;
+}
+[data-theme="light"] .form-control::placeholder,
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder{color:#94A3B8}
+
+/* ---------- 8. Inline-style Blade gelap (#0b1220/#0e1a30/...) → putih ----------
+   Halaman layanan (devops/detail) memakai inline style navy hard-coded.
+   Gradient hero NOC & CTA dipertahankan (tetap gelap, teks putih terbaca). */
+[data-theme="light"] div[style*="0e1a30"],
+[data-theme="light"] div[style*="0E1A30"],
+[data-theme="light"] div[style*="0b1526"],
+[data-theme="light"] div[style*="0B1526"],
+[data-theme="light"] div[style*="13263f"],
+[data-theme="light"] div[style*="13263F"]{
+  background:#fff !important;
+  border-color:#E2E8F0 !important;
+  box-shadow:0 10px 30px rgba(15,37,64,.06);
+}
+[data-theme="light"] div[style*="0e1a30"] strong,
+[data-theme="light"] div[style*="0E1A30"] strong,
+[data-theme="light"] div[style*="0b1526"] span,
+[data-theme="light"] div[style*="0B1526"] span{color:#0F2540 !important}
+[data-theme="light"] div[style*="0e1a30"] p,
+[data-theme="light"] div[style*="0E1A30"] p{color:#475569 !important}
+/* section hero radial gelap & CTA gradient: biarkan gelap (teks putih tetap terbaca) */
+[data-theme="light"] div[style*="radial-gradient"],
+[data-theme="light"] div[style*="linear-gradient(135deg,#0b3b7a"],
+[data-theme="light"] div[style*="linear-gradient(135deg,#052e16"]{box-shadow:0 18px 50px rgba(2,95,202,.18)}
+
+/* Log insiden monospace: jadikan terang agar terbaca */
+[data-theme="light"] div[style*="0b1526"][style*="monospace"]{background:#0F2540 !important;border-color:#0F2540 !important}
+[data-theme="light"] div[style*="0b1526"][style*="monospace"] span,
+[data-theme="light"] div[style*="0b1526"][style*="monospace"] div{color:#E2E8F0 !important}
+
+/* "Kenapa Eraya?" sudah terang (#f0f9ff) → biarkan */
+/* Paragraf helper di halaman layanan yang hard-coded terang-gelap */
+[data-theme="light"] p[style*="C4D3E8"]{color:#475569 !important}
+[data-theme="light"] p[style*="8FA3BD"],
+[data-theme="light"] span[style*="8FA3BD"]{color:#64748B !important}
+[data-theme="light"] h3[style*="color:#fff"],
+[data-theme="light"] h2[style*="color:#fff"]{color:#0F2540 !important}
+/* Pulau gelap di light mode (hero radial NOC, CTA gradient, section cara-kerja #0b1220):
+   sengaja dipertahankan gelap → kembalikan teks terang di dalamnya */
+[data-theme="light"] div[style*="gradient"] h2[style*="color:#fff"],
+[data-theme="light"] div[style*="gradient"] h3[style*="color:#fff"],
+[data-theme="light"] section[style*="0b1220"] .sec-title{color:#fff !important}
+[data-theme="light"] div[style*="gradient"] p[style*="C4D3E8"]{color:#C4D3E8 !important}
+[data-theme="light"] div[style*="gradient"] p[style*="8FA3BD"],
+[data-theme="light"] div[style*="gradient"] span[style*="8FA3BD"]{color:#8FA3BD !important}
+/* Panel NOC / kartu layanan yang diputihkan (live-status, coverage, langkah, stats):
+   remap semua teks terang di dalamnya → gelap. Log monospace dikecualikan
+   (dipertahankan gelap + sudah dijaga aturannya di atas). */
+[data-theme="light"] div[style*="0e1a30" i]:not([style*="monospace" i]) span,
+[data-theme="light"] div[style*="0b1526" i]:not([style*="monospace" i]) span,
+[data-theme="light"] div[style*="13263f" i] span,
+[data-theme="light"] div[style*="0e1a30" i]:not([style*="monospace" i]) div,
+[data-theme="light"] div[style*="13263f" i] div,
+[data-theme="light"] div[style*="0e1a30" i] h4{color:#334155 !important}
+[data-theme="light"] div[style*="0e1a30" i] span[style*="7CFC9A" i]{color:#15803D !important}
+[data-theme="light"] div[style*="0e1a30" i] span[style*="0ea5e9" i]{color:#fff !important}
+[data-theme="light"] div[style*="0e1a30" i] i[style*="3EC964" i]{color:#15803D !important}
+
+/* ---------- 9. Particles & video bg ---------- */
+[data-theme="light"] .particles-js-canvas-el{opacity:.4}
+[data-theme="light"] .video-layout1{background-color:#E8EFF9 !important}
+
+/* ---------- 10. Tombol toggle tema ---------- */
+.eds-theme-toggle{
+  width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#1B2841;color:#FFA41C;font-size:16px;line-height:1;
+  transition:transform .25s ease,background .25s ease,color .25s ease;
+}
+.eds-theme-toggle:hover{transform:rotate(15deg) scale(1.06)}
+[data-theme="light"] .eds-theme-toggle{background:#0F2540;color:#FFD43B}
+.eds-theme-toggle .eds-icon-moon{display:inline}
+.eds-theme-toggle .eds-icon-sun{display:none}
+[data-theme="light"] .eds-theme-toggle .eds-icon-moon{display:none}
+[data-theme="light"] .eds-theme-toggle .eds-icon-sun{display:inline}
+.vs-menu-area .eds-theme-toggle{margin-top:14px}

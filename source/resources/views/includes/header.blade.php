@@ -20,6 +20,10 @@
                 </li>
             </ul>
         </div>
+        <button type="button" class="eds-theme-toggle" data-eds-theme-toggle aria-label="Ganti mode gelap / terang" title="Ganti mode gelap / terang">
+            <i class="fa-solid fa-moon eds-icon-moon"></i>
+            <i class="fa-solid fa-sun eds-icon-sun"></i>
+        </button>
     </div>
 </div>
 <div class="sidemenu-wrapper d-none d-lg-block">
@@ -115,6 +119,10 @@
                                     </div>
                                     <div class="col-auto d-xl-block d-none">
                                         <div class="header-icons">
+                                            <button type="button" class="eds-theme-toggle" data-eds-theme-toggle aria-label="Ganti mode gelap / terang" title="Ganti mode gelap / terang">
+                                                <i class="fa-solid fa-moon eds-icon-moon"></i>
+                                                <i class="fa-solid fa-sun eds-icon-sun"></i>
+                                            </button>
                                             <a href="#" class="icon-btn sideMenuToggler"><i
                                                     class="fa-solid fa-bars"></i></a>
                                             <a href="#" class="icon-btn">

@@ -63,8 +63,8 @@
 <meta name="robots" content="{{ $seoRobots }}">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="{{ $seoCanonical }}">
-<meta name="theme-color" content="#0f172a">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0E192D" id="edsThemeColor">
+<meta name="color-scheme" content="dark light">
 <meta name="format-detection" content="telephone=no">
 
 <!-- Mobile Specific Metas -->
@@ -129,3 +129,5 @@
 <link rel="stylesheet" href="{{ asset('template_v1/css/style.css') }}">
 <!-- EDS fix: font profesional + kontras -->
 <link rel="stylesheet" href="{{ asset('template_v1/css/eds-override.css') }}">
+<!-- EDS theme: light mode overrides (aktif saat <html data-theme="light">) -->
+<link rel="stylesheet" href="{{ asset('template_v1/css/eds-theme.css') }}">

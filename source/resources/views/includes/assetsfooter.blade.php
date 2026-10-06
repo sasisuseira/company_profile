@@ -18,6 +18,31 @@
 <script src="{{ asset('template_v1/js/jquery.nice-select.min.js') }}"></script>
 <!-- Main Js File -->
 <script src="{{ asset('template_v1/js/main.js') }}"></script>
+{{-- EDS theme toggle: dark / light, tersimpan di localStorage. Default: dark --}}
+<script>
+(function(){
+  var KEY='eds-theme';
+  function current(){return document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';}
+  function apply(t){
+    document.documentElement.setAttribute('data-theme',t);
+    try{localStorage.setItem(KEY,t);}catch(e){}
+    var meta=document.getElementById('edsThemeColor');
+    if(meta){meta.setAttribute('content',t==='light'?'#EFF6FF':'#0E192D');}
+    document.querySelectorAll('[data-eds-theme-toggle]').forEach(function(b){
+      b.setAttribute('aria-pressed',t==='light'?'true':'false');
+      b.setAttribute('title',t==='light'?'Ganti ke mode gelap':'Ganti ke mode terang');
+    });
+  }
+  // sinkronkan meta + tombol dengan tema awal (dari inline script anti-flicker)
+  apply(current());
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest?e.target.closest('[data-eds-theme-toggle]'):null;
+    if(!btn)return;
+    e.preventDefault();
+    apply(current()==='light'?'dark':'light');
+  });
+})();
+</script>
 {{-- EDS global: smooth scroll untuk semua link # + sembunyikan hash dari URL --}}
 <script>
 document.addEventListener('DOMContentLoaded',function(){

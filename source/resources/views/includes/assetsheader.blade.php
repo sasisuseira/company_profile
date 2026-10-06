@@ -109,7 +109,7 @@
 ============================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 
 <!--==============================
@@ -127,3 +127,5 @@
 <link rel="stylesheet" href="{{ asset('template_v1/css/slick.min.css') }}">
 <!-- Theme Custom CSS -->
 <link rel="stylesheet" href="{{ asset('template_v1/css/style.css') }}">
+<!-- EDS fix: font profesional + kontras -->
+<link rel="stylesheet" href="{{ asset('template_v1/css/eds-override.css') }}">

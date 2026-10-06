@@ -106,8 +106,9 @@
                 <div class="col-auto">
                     <div class="copyright-menu">
                         <ul class="list-unstyled">
-                            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalPrivacy">Privacy Policy</a></li>
-                            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalTerms">Terms & Conditions </a></li>
+                            <li><a href="{{ route('legal.privasi') }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('legal.syarat') }}">Terms & Conditions</a></li>
+                            <li><a href="{{ route('legal.refund') }}">Refund Policy</a></li>
                         </ul>
                     </div>
                 </div>

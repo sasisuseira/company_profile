@@ -51,7 +51,7 @@ class Landing extends Controller
     public function email_profesional()
     {
         $data['info_location'] = $this->get_info_location();
-        $data['use_footer'] = false;
+        $data['use_footer'] = true;
         $data['seo'] = $this->base_seo([
             'title' => 'Email Profesional untuk Bisnis (nama@perusahaan.co.id) | Eraya Digital',
             'description' => 'Buat email bisnis profesional nama@perusahaan.co.id dengan cepat dan aman. Anti-spam, webmail, kapasitas besar — mulai Rp 30rb/bulan. Cocok untuk UMKM, sekolah, dan perusahaan.',
@@ -72,6 +72,45 @@ class Landing extends Controller
             'canonical' => route('layanan.hubungi_kami'),
         ]);
         return view('hubungikami', $data);
+    }
+
+    public function syarat_ketentuan()
+    {
+        $data['info_location'] = $this->get_info_location();
+        $data['use_footer'] = true;
+        $data['seo'] = $this->base_seo([
+            'title' => 'Syarat & Ketentuan Layanan | PT. Eraya Digital Solusindo',
+            'description' => 'Syarat & Ketentuan resmi PT. Eraya Digital Solusindo: harga dalam Rupiah, pembayaran via payment gateway, langganan, garansi, dan kontak Jakarta & Malang.',
+            'keywords' => 'syarat ketentuan eraya digital, terms conditions software house, harga layanan eraya',
+            'canonical' => route('legal.syarat'),
+        ]);
+        return view('halamansyaratketentuan', $data);
+    }
+
+    public function kebijakan_privasi()
+    {
+        $data['info_location'] = $this->get_info_location();
+        $data['use_footer'] = true;
+        $data['seo'] = $this->base_seo([
+            'title' => 'Kebijakan Privasi (UU PDP) | PT. Eraya Digital Solusindo',
+            'description' => 'Kebijakan Privasi PT. Eraya Digital Solusindo sesuai UU PDP No. 27/2022: jenis data, tujuan, keamanan, dan hak subjek data. Kontak: hallo@erayadigital.co.id.',
+            'keywords' => 'kebijakan privasi eraya digital, privacy policy software house indonesia, UU PDP',
+            'canonical' => route('legal.privasi'),
+        ]);
+        return view('halamankebijakanprivasi', $data);
+    }
+
+    public function kebijakan_refund()
+    {
+        $data['info_location'] = $this->get_info_location();
+        $data['use_footer'] = true;
+        $data['seo'] = $this->base_seo([
+            'title' => 'Kebijakan Pengembalian Dana (Refund) | PT. Eraya Digital Solusindo',
+            'description' => 'Kebijakan refund PT. Eraya Digital Solusindo: garansi 30 hari layanan langganan, DP kembali 100% bila batal ≤14 hari sebelum kickoff, alur pengajuan via hallo@erayadigital.co.id.',
+            'keywords' => 'refund eraya digital, pengembalian dana, garansi layanan software house',
+            'canonical' => route('legal.refund'),
+        ]);
+        return view('halamankebijakanrefund', $data);
     }
 
     public function detail($slug)
@@ -103,66 +142,71 @@ class Landing extends Controller
             'type' => 'article',
         ]);
 
+        // DevOps punya layout NOC tersendiri, beda konsep dari ERP
+        if ($slug === 'devops-maintenance') {
+            return view('halamanlayanandevops', $data);
+        }
+
         return view('halamanlayanandetail', $data);
     }
 
     public static function data_layanan(): array
     {
         return [
-            'pengembangan-aplikasi' => [
-                'slug' => 'pengembangan-aplikasi',
-                'badge' => 'Pengembangan Aplikasi',
-                'judul' => 'Ubah Bisnis Manual Jadi Mesin Cuan Digital',
-                'judul_span' => 'Mesin Cuan Digital',
-                'subjudul' => 'Stop kerja 12 jam sehari untuk hal yang bisa diklik 12 detik. Kami bangunkan aplikasi web, mobile, & ERP yang bikin operasional autopilot.',
-                'deskripsi' => 'Dari kasir berantakan sampai laporan yang selalu telat — kami sulap jadi dashboard rapi yang bisa dipantau dari HP sambil ngopi.',
+            'erp' => [
+                'slug' => 'erp',
+                'badge' => 'ERP & Sistem Terintegrasi',
+                'judul' => 'Satu Sistem ERP untuk Semua Divisi Bisnis Anda',
+                'judul_span' => 'Sistem ERP',
+                'subjudul' => 'Hentikan data mental di Excel dan chat. Kami bangun ERP modular — keuangan, inventory, HRD, pengadaan, dan operasional terhubung real-time dalam satu dashboard.',
+                'deskripsi' => 'Untuk perusahaan dagang, sekolah, klinik, dan manufaktur — ERP disesuaikan dengan alur bisnis Anda, lengkap dengan hak akses per divisi dan audit trail.',
                 'icon' => 'developer.svg',
-                'rating' => '4.9/5 dari 40+ klien',
+                'rating' => '4.9/5 dari 10+ klien',
                 'stats' => [
-                    ['angka' => '13+', 'label' => 'Aplikasi Live & Dipakai Harian'],
+                    ['angka' => '13+', 'label' => 'Modul ERP Live & Dipakai Harian'],
                     ['angka' => '98%', 'label' => 'Klien Puas & Repeat Order'],
-                    ['angka' => '30 Hari', 'label' => 'Rata-rata MVP Jadi'],
+                    ['angka' => '30–90 Hari', 'label' => 'Go-Live per Fase Modul'],
                 ],
-                'masalah_judul' => 'Kenapa Bisnis Kamu Stuck? Karena Masih...',
+                'masalah_judul' => 'Ciri Bisnis yang Butuh ERP Sekarang...',
                 'masalah' => [
-                    ['judul' => 'Catat Manual di Buku & Excel', 'teks' => 'Satu nota hilang, stok selisih, uang bocor tanpa ketahuan. Capek rekonsiliasi tiap malam?'],
-                    ['judul' => 'Laporan Selalu Telat & Nggak Akurat', 'teks' => 'Owner baru tahu rugi setelah sebulan berjalan. Keputusan bisnis jadi tebak-tebakan.'],
-                    ['judul' => 'Tim Kewalahan, Owner Burnout', 'teks' => 'Semua nanya ke kamu. Cuti pun tetap ditelepon. Bisnis jalan kalau kamu ada — libur kalau kamu pergi.'],
-                    ['judul' => 'Mau Scale Up Tapi Sistem Nggak Siap', 'teks' => 'Buka cabang baru = chaos baru. SOP beda-beda, data mental-mental di tiap tempat.'],
+                    ['judul' => 'Data Mental di Banyak File', 'teks' => 'Stok di gudang beda dengan catatan admin, keuangan beda lagi. Rekonsiliasi tiap akhir bulan selalu drama.'],
+                    ['judul' => 'Approval Lambat & Manual', 'teks' => 'PO, PR, dan pengeluaran harus tanda tangan basah atau chat satu-satu. Bisnis jalan lambat.'],
+                    ['judul' => 'Laporan Direksi Selalu Telat', 'teks' => 'Laba-rugi, umur piutang, dan perputaran stok baru ketahuan berminggu-minggu kemudian.'],
+                    ['judul' => 'Cabang & Divisi Tidak Sinkron', 'teks' => 'SOP beda-beda, harga beda-beda, stok tidak terlihat antar lokasi. Sulit ekspansi.'],
                 ],
-                'solusi_judul' => 'Bayangkan Kalau Semua Ini Beres Dalam 30 Hari...',
-                'solusi_teks' => 'Order masuk otomatis, stok berkurang sendiri, laporan laba-rugi update real-time, tim kerja tanpa kamu awasi. Itulah yang kami bangun: bukan sekadar aplikasi, tapi asisten digital yang kerja 24/7 tanpa gaji.',
-                'fitur_judul' => 'Yang Kamu Dapat (Bukan Aplikasi Kaleng-Kaleng)',
+                'solusi_judul' => 'Bayangkan Semua Divisi Satu Angka Sama...',
+                'solusi_teks' => 'Sales input order, gudang berkurang otomatis, keuangan terbentuk jurnalnya, direksi lihat laba real-time. Itulah ERP: satu input, semua divisi rapi.',
+                'fitur_judul' => 'Modul ERP yang Paling Sering Dipakai Klien',
                 'fitur' => [
-                    ['icon' => 'fa-solid fa-mobile-screen', 'judul' => 'Web + Mobile + Kasir', 'teks' => 'Satu sistem untuk semua: dashboard owner, aplikasi kasir, dan aplikasi pelanggan. Sinkron real-time.'],
-                    ['icon' => 'fa-solid fa-chart-line', 'judul' => 'Laporan Real-Time Anti Drama', 'teks' => 'Omzet, laba, produk terlaris, karyawan terajin — semua live. Buka HP langsung kelihatan.'],
-                    ['icon' => 'fa-solid fa-cloud', 'judul' => 'Cloud & Aman Terenskripsi', 'teks' => 'Data tersimpan di server aman + backup otomatis harian. HP hilang? Data tetap selamat.'],
-                    ['icon' => 'fa-solid fa-plug', 'judul' => 'Integrasi Payment & WA', 'teks' => 'QRIS, transfer bank, nota otomatis terkirim ke WhatsApp pelanggan. Checkout 10 detik.'],
-                    ['icon' => 'fa-solid fa-users-gear', 'judul' => 'Multi-Cabang & Multi-User', 'teks' => 'Atur hak akses per karyawan & pantau semua cabang dari satu layar. Anti curang, anti bocor.'],
-                    ['icon' => 'fa-solid fa-rocket', 'judul' => 'Siap Scale & ERP-Ready', 'teks' => 'Arsitektur modular. Hari ini kasir, besok tambah gudang, HRD, akuntansi. Nggak perlu bongkar dari nol.'],
+                    ['icon' => 'fa-solid fa-calculator', 'judul' => 'Keuangan & Akuntansi', 'teks' => 'Jurnal otomatis, AR/AP, umur piutang, laba-rugi per cabang. Siap diaudit + ekspor e-faktur.'],
+                    ['icon' => 'fa-solid fa-boxes-stacked', 'judul' => 'Inventory Multi-Gudang', 'teks' => 'Stok real-time antar lokasi, opname via HP/barcode, kartu stok, dan peringatan stok minimum.'],
+                    ['icon' => 'fa-solid fa-users-gear', 'judul' => 'HRD & Payroll', 'teks' => 'Data karyawan, absensi, cuti, lembur, dan slip gaji terintegrasi dengan biaya per divisi.'],
+                    ['icon' => 'fa-solid fa-file-signature', 'judul' => 'Pengadaan & Approval', 'teks' => 'PR–PO–GRN berjenjang via HP. Jejak persetujuan tercatat, anti pembelian siluman.'],
+                    ['icon' => 'fa-solid fa-chart-line', 'judul' => 'Laporan Direksi Real-Time', 'teks' => 'Dashboard omzet, margin, cashflow, dan produk mati. Buka HP langsung kelihatan.'],
+                    ['icon' => 'fa-solid fa-plug', 'judul' => 'Integrasi API & Pajak', 'teks' => 'Tersambung ke kasir, marketplace, WA notifikasi, QRIS/bank, dan sistem lama Anda.'],
                 ],
                 'langkah' => [
-                    ['judul' => 'Bedah Bisnis (Gratis)', 'teks' => 'Kami dengerin masalahmu 60 menit, petakan alur kerja, dan kasih blueprint solusi — gratis, no komitmen.'],
-                    ['judul' => 'Prototype 7 Hari', 'teks' => 'Kamu lihat desain klik-able aplikasimu. Revisi sepuasnya sebelum coding dimulai. No surprise.'],
-                    ['judul' => 'Build & Testing', 'teks' => 'Coding sprint mingguan + demo tiap Jumat. Kamu pantau progres live via link staging.'],
-                    ['judul' => 'Launch & Didampingi', 'teks' => 'Training tim, migrasi data, go-live didampingi. Garansi bug 90 hari + support prioritas.'],
+                    ['judul' => 'Bedah Proses (Gratis)', 'teks' => 'Kami petakan alur order–gudang–keuangan Anda 60 menit dan usulkan fase modul paling hemat.'],
+                    ['judul' => 'Blueprint & Prototype', 'teks' => 'Alur + struktur data + demo klik disepakati dulu. Tidak ada coding sebelum Anda setuju.'],
+                    ['judul' => 'Build per Fase', 'teks' => 'Go-live bertahap per modul + migrasi data Excel lama. Demo progres tiap Jumat via staging.'],
+                    ['judul' => 'Training & Pendampingan', 'teks' => 'Training per divisi, SOP tertulis, garansi bug 90 hari + opsi maintenance tahunan.'],
                 ],
                 'paket' => [
-                    ['nama' => 'Landing + Company Profile', 'deskripsi' => 'Buat tampil meyakinkan di Google', 'harga' => 'Rp 3,5 Jt', 'durasi' => 'sekali bayar', 'unggulan' => false, 'fitur' => ['Website 5 halaman SEO-ready', 'Integrasi WA + Maps + Form', 'Copywriting dibantu AI', 'Gratis domain .com 1 thn', 'Training update konten']],
-                    ['nama' => 'Bisnis App', 'deskripsi' => 'Paling laris untuk UMKM naik kelas', 'harga' => 'Rp 12 Jt', 'durasi' => 'mulai dari', 'unggulan' => true, 'fitur' => ['Web app + aplikasi kasir', 'Laporan real-time + notif WA', 'Multi-user & multi-cabang', 'Integrasi QRIS & payment', 'Garansi 90 hari + training', 'Gratis maintenance 3 bulan']],
-                    ['nama' => 'Custom ERP / Enterprise', 'deskripsi' => 'Untuk yang butuhnya kompleks', 'harga' => 'Hubungi Kami', 'durasi' => 'survei gratis', 'unggulan' => false, 'fitur' => ['Modul custom: gudang, HRD, akuntansi', 'Integrasi API & sistem lama', 'Dedicated PM + dokumentasi', 'SLA & maintenance tahunan', 'Audit keamanan + backup']],
+                    ['nama' => 'ERP Starter', 'deskripsi' => '1 divisi / 1 lokasi dulu', 'harga' => 'Rp 15 Jt', 'durasi' => 'mulai dari', 'unggulan' => false, 'fitur' => ['2 modul inti (pilih: keuangan/inventory)', 'Multi-user + hak akses', 'Migrasi data Excel', 'Training 1 divisi', 'Garansi 90 hari']],
+                    ['nama' => 'ERP Bisnis', 'deskripsi' => 'Paling laris multi-divisi', 'harga' => 'Rp 35 Jt', 'durasi' => 'mulai dari', 'unggulan' => true, 'fitur' => ['Sampai 5 modul + approval', 'Multi-gudang & multi-cabang', 'Dashboard direksi + notif WA', 'Integrasi QRIS / API', 'Training semua divisi', 'Maintenance 3 bulan']],
+                    ['nama' => 'ERP Enterprise', 'deskripsi' => 'Kompleks & multi-perusahaan', 'harga' => 'Hubungi Kami', 'durasi' => 'survei gratis', 'unggulan' => false, 'fitur' => ['Modul custom + konsolidasi holding', 'Integrasi sistem lama / SAP-like', 'Dedicated PM + dokumentasi', 'SLA & audit keamanan', 'On-premise / private cloud']],
                 ],
-                'kenapa' => ['Source code milik kamu 100% (no kunci-kuncian)', 'Teknologi modern: Laravel, Flutter, Vue — cepat & aman', 'Demo progres tiap minggu, bukan hilang 3 bulan', 'Tim lokal Malang, fast respon via WA, bisa onsite', 'Sudah dipercaya 10+ brand & sekolah sejak 2019'],
-                'testimoni' => ['nama' => 'Sanjaya Group', 'jabatan' => 'Owner Grosir & Oli — Malang', 'teks' => '“Dulu stok opname 3 hari, sekarang 15 menit dari HP. Selisih gudang turun 90%. Gila sih ini.”'],
+                'kenapa' => ['Source code milik kamu 100% (no kunci-kuncian)', 'Teknologi modern: Go, Svelte, Docker atau Kubernetes, SQL dan NoSQL', 'Demo progres tiap minggu, bukan hilang 3 bulan', 'Tim lokal Malang dan Jakarta, fast respon via WA, Discord, bisa onsite', 'Sudah dipercaya 5+ UMKM Perusahaan Dagang dan Manufaktur sejak 2019'],
+                'testimoni' => ['nama' => 'Eraya ERP', 'jabatan' => 'Implementasi bertahap per modul', 'teks' => 'Implementasi ERP kami dilakukan bertahap per modul dengan pendampingan penuh.'],
                 'faq' => [
-                    ['q' => 'Berapa lama aplikasi jadi?', 'a' => 'Landing 7–14 hari. Aplikasi bisnis (kasir + laporan) 21–30 hari. ERP custom 2–4 bulan tergantung modul. Kamu dapat timeline tertulis di proposal — telat ada kompensasi.'],
-                    ['q' => 'Apakah saya dapat source code?', 'a' => 'Ya, 100% milik kamu. Kami serahkan repo + dokumentasi + kredensial server saat serah terima. Kamu bebas lanjutkan dengan siapa pun.'],
-                    ['q' => 'Bagaimana kalau tim saya gaptek?', 'a' => 'Justru itu tugas kami. Kami training sampai bisa, sediakan video tutorial + panduan PDF, dan dampingi 30 hari pertama. Rata-rata tim beradaptasi dalam 3 hari.'],
-                    ['q' => 'Bisa cicil / bertahap?', 'a' => 'Bisa. Skema umum 30% DP – 40% setelah demo – 30% saat go-live. Untuk enterprise bisa termin bulanan per milestone.'],
-                    ['q' => 'Apakah ada garansi?', 'a' => 'Garansi bug 90 hari (gratis fix). Setelah itu ada paket maintenance murah mulai Rp 500rb/bulan: update, backup, monitoring.'],
+                    ['q' => 'Berapa lama ERP jadi dan bagaimana tahapannya?', 'a' => 'Tergantung jumlah modul. Paket Starter (2 modul, 1 lokasi) umumnya 30–45 hari kerja: minggu 1–2 blueprint + prototype, minggu 3–5 build + migrasi data, minggu 6 UAT + training + go-live. Paket Bisnis multi-divisi 2–3 bulan karena dikerjakan bertahap per modul agar operasional tidak berhenti. Enterprise 3–6 bulan per fase. Setiap proposal mencantumkan timeline tertulis per milestone lengkap dengan kriteria serah terima, jadi Anda bisa memantau progres tiap Jumat via link staging.'],
+                    ['q' => 'Apakah saya dapat source code dan akses penuh?', 'a' => 'Ya, 100% milik Anda setelah pelunasan — tanpa kunci-kuncian. Yang diserahkan: repository source code (Laravel / Flutter / Vue sesuai paket), struktur database + dokumentasi API, kredensial server/cloud dan akun layanan terkait, serta panduan instalasi dan SOP operasional. Artinya Anda bebas melanjutkan dengan tim internal atau vendor lain kapan pun. Satu-satunya yang bukan milik Anda adalah lisensi pihak ketiga (mis. Google Maps, payment gateway, font premium) yang memang berlangganan atas nama Anda.'],
+                    ['q' => 'Apakah ERP bisa dikerjakan bertahap / cicil modul dan cicil bayar?', 'a' => 'Bisa dan justru kami sarankan bertahap. Mulai dari modul yang paling sakit dulu — misalnya inventory untuk atasi selisih stok — lalu lanjut keuangan, baru HRD. Setiap fase berdiri sendiri dan langsung bisa dipakai, jadi investasi terasa hasilnya tanpa menunggu semua jadi. Pembayaran per fase mengikuti skema 30% DP saat kickoff fase, 40% setelah demo/UAT fase disetujui, 30% saat go-live fase tersebut. Untuk enterprise tersedia termin bulanan per milestone.'],
+                    ['q' => 'Bagaimana migrasi data dari Excel / sistem lama? Apakah dibantu?', 'a' => 'Sangat dibantu, ini bagian tersulit dan kami yang mengawal. Alurnya: (1) kami audit file Excel / database lama Anda dan tentukan format baku master barang, pelanggan, supplier, dan saldo awal; (2) kami bersihkan data ganda dan kode yang tidak konsisten bersama admin Anda; (3) uji migrasi ke server staging lalu rekonsiliasi bersama — stok fisik vs sistem, piutang vs laporan lama — sampai selisih nol; (4) baru cut-over ke production didampingi. Tim Anda cukup siapkan file mentah dan satu PIC yang paham operasional, sisanya kami bereskan plus training input yang benar agar tidak kotor lagi.'],
+                    ['q' => 'Apa garansi dan maintenance setelah go-live?', 'a' => 'Setiap paket termasuk garansi bug 90 hari sejak go-live: error, perhitungan salah, atau fitur sesuai blueprint yang tidak jalan diperbaiki gratis. Setelah masa garansi, ada paket maintenance mulai dari Rp 500rb/bulan mencakup update keamanan, backup otomatis harian yang dicek, monitoring server, dan jatah perubahan minor. Layanan kritis (sistem tidak bisa transaksi) kami respon < 1 jam di jam kerja dengan target pulih < 4 jam. Semua tercatat di laporan bulanan: uptime, insiden, dan rekomendasi.'],
                 ],
-                'cta_judul' => 'Masih Mau Capek Catat Manual Tahun Depan?',
-                'cta_teks' => 'Slot development kami cuma 4 slot/bulan. Amankan sesi bedah bisnis gratis (senilai Rp 750rb) — kuota minggu ini tersisa 2.',
+                'cta_judul' => 'Gratis Landing Page / Katalog Online Senilai Rp 3,5 Jt+',
+                'cta_teks' => 'Setiap implementasi ERP bulan ini GRATIS 1 landing page company profile + katalog online (SEO-ready, integrasi WA + Maps + form order, gratis domain .com 1 tahun). Tampil meyakinkan di Google sambil operasional beres di ERP. Slot bonus cuma 4/bulan.',
             ],
             'ai-otomatisasi' => [
                 'slug' => 'ai-otomatisasi',
@@ -171,7 +215,7 @@ class Landing extends Controller
                 'judul_span' => 'Karyawan AI',
                 'subjudul' => 'Chatbot yang closing, agen AI yang rekap data, otomatisasi yang motong 80% kerja manual. Hemat 3 gaji karyawan mulai bulan depan.',
                 'deskripsi' => 'Dari CS yang jawab 24 jam sampai analis yang bikin laporan otomatis — AI kami dilatih pakai data bisnismu sendiri.',
-                'icon' => 'service-icon-2-1.svg',
+                'icon' => 'logo_ai.svg',
                 'rating' => 'Dipakai 15+ bisnis aktif',
                 'stats' => [
                     ['angka' => '80%', 'label' => 'Kerja Manual Terpangkas'],
@@ -226,7 +270,7 @@ class Landing extends Controller
                 'judul_span' => 'dari HP, Real-Time',
                 'subjudul' => 'Sensor + dashboard + notifikasi WA: suhu gudang naik, mesin overheat, atau kolam lele kekurangan oksigen — kamu tahu duluan sebelum rugi.',
                 'deskripsi' => 'Kami desain perangkat IoT + cloud monitoring yang tahan dipakai 24/7 di kondisi Indonesia: panas, lembab, listrik naik-turun.',
-                'icon' => 'service-icon-2-2.svg',
+                'icon' => 'logo_iot.svg',
                 'rating' => 'Monitoring 15+ server & site aktif',
                 'stats' => [
                     ['angka' => '24/7', 'label' => 'Monitoring Nonstop'],
@@ -334,7 +378,7 @@ class Landing extends Controller
                 'badge' => 'DevOps & Maintenance',
                 'judul' => 'Server Anti Down, Data Anti Hilang. Tidur Tenang.',
                 'judul_span' => 'Tidur Tenang.',
-                'subjudul' => 'Kami jagain server, website, database & jaringanmu 24/7: update, backup, keamanan, sampai восстановi saat down. Kamu fokus bisnis.',
+                'subjudul' => 'Kami jagain server, website, database & jaringanmu 24/7: update, backup, keamanan, sampai recovery saat down. Kamu fokus bisnis.',
                 'deskripsi' => 'Spesialis yang dipercaya sekolah, klinik & puskesmas: sistem harus jalan Senin pagi, tanpa drama.',
                 'icon' => 'devops.svg',
                 'rating' => '15+ server aktif dijaga harian',
@@ -345,9 +389,9 @@ class Landing extends Controller
                 ],
                 'masalah_judul' => 'Mimpi Buruk Setiap Owner Website...',
                 'masalah' => [
-                    ['judul' => 'Website Down Pas Dibutuhkan', 'teks' => 'PPDB dibuka, web down. Pasien mau daftar, sistem error. Reputasi hancur dalam sejam.'],
+                    ['judul' => 'Website Down Pas Dibutuhkan', 'teks' => 'Sistem dibuka, web down. Client mau daftar, sistem error. Reputasi hancur dalam sejam.'],
                     ['judul' => 'Data Hilang Tanpa Backup', 'teks' => 'Harddisk jebol / kena ransomware. 5 tahun data lenyap. Mau nangis pun data nggak balik.'],
-                    ['judul' => 'Nggak Ada IT In-House', 'teks' => 'Gaji IT Rp 8jt/bulan kemahalan. Panggil tukang saat rusak? Mahal + lama + nggak ada yang tanggung jawab.'],
+                    ['judul' => 'Tidak Memiliki Tenaga IT In-House', 'teks' => 'Gaji IT UMR/bulan kemahalan. Panggil tukang saat rusak? Mahal + lama + nggak ada yang tanggung jawab.'],
                     ['judul' => 'Diserang Bot & Judi Online', 'teks' => 'Web disusupi slot, email kena spam, server jadi tambang kripto. Nggak sadar sampai diblokir Google.'],
                 ],
                 'solusi_judul' => 'Punya Tim IT Senior Tanpa Gaji Karyawan',
@@ -372,14 +416,14 @@ class Landing extends Controller
                     ['nama' => 'Jaga Bisnis', 'deskripsi' => 'Server + web + database aktif', 'harga' => 'Rp 1,5 Jt', 'durasi' => '/bulan', 'unggulan' => true, 'fitur' => ['Semua Jaga Web + backup harian', 'Hardening + WAF + anti-DDoS', 'Optimasi speed & database', 'Respon insiden < 1 jam', 'Free 2 jam perubahan minor', 'Laporan + konsultasi prioritas']],
                     ['nama' => 'Dedicated DevOps', 'deskripsi' => 'Infrastruktur kompleks / multi-server', 'harga' => 'Hubungi Kami', 'durasi' => 'kontrak tahunan', 'unggulan' => false, 'fitur' => ['Multi-server + load balancer', 'CI/CD + staging pipeline', 'On-call 24/7 + SLA 99,9%', 'Audit keamanan berkala', 'Dedicated engineer + onsite']],
                 ],
-                'kenapa' => ['Spesialis Linux, Docker, Mikrotik & cloud Indonesia (IDCloud, Biznet, AWS)', 'Dokumentasi lengkap — kamu nggak dikunci satu vendor', 'Berpengalaman di faskes & sekolah yang nggak boleh down', 'Harga flat bulanan, tanpa biaya siluman per klik', 'Bisa onsite Malang Raya & remote seluruh Indonesia'],
+                'kenapa' => ['Spesialis Linux, Docker, Mikrotik & cloud Indonesia (IDCloud, Biznet, AWS)', 'Dokumentasi lengkap — kamu nggak dikunci satu vendor', 'Berpengalaman di faskes & sekolah yang nggak boleh down', 'Harga flat bulanan, tanpa biaya siluman per klik', 'Bisa onsite Malang Raya, Jakarta & remote seluruh Indonesia'],
                 'testimoni' => ['nama' => 'SMK PGRI 6 Malang', 'jabatan' => 'Waka Kurikulum', 'teks' => '“PPDB 2000 pendaftar, web anteng. Tahun lalu down 2 hari. Bedanya cuma pindah maintenance ke Eraya.”'],
                 'faq' => [
-                    ['q' => 'Server saya di mana? Bisa dijaga?', 'a' => 'Di mana pun: cPanel/shared hosting, VPS, dedicated, cloud (AWS/GCP/IDCloud), bahkan server fisik di kantormu. Kami akses via SSH/VPN aman + NDA.'],
-                    ['q' => 'Kalau sudah down sekarang, bisa tolong?', 'a' => 'Bisa — layanan Rescue (one-time) Rp 750rb–2,5jt tergantung kasus. Rata-rata pulih 2–6 jam. Setelah pulih kami sarankan paket jaga agar tidak terulang.'],
-                    ['q' => 'Apakah password saya aman?', 'a' => 'Semua kredensial disimpan di vault terenkripsi, akses dibatasi engineer bertugas, tercatat log. Kontrak + NDA standar untuk semua klien.'],
-                    ['q' => 'Bisa bantu migrasi / pindah server?', 'a' => 'Sangat bisa dan gratis untuk pelanggan tahunan. Migrasi zero-downtime (pindah tanpa web mati), termasuk pindah domain & email.'],
-                    ['q' => 'Kontrak minimal berapa lama?', 'a' => 'Bulanan, tanpa ikatan. Tapi 90% klien ambil tahunan karena gratis 2 bulan + prioritas rescue. Berhenti kapan pun, akses diserahkan rapi.'],
+                    ['q' => 'Server / website saya di mana? Apakah tetap bisa dijaga?', 'a' => 'Bisa, di mana pun infrastruktur Anda berada. Kami menangani shared hosting / cPanel, VPS, dedicated server, cloud Indonesia (IDCloud, Biznet, Telkom) maupun global (AWS, GCP, Alibaba), bahkan server fisik di kantor Anda. Akses dilakukan via SSH key / VPN dengan IP whitelist, bukan password mentah yang dikirim via chat. Sebelum mulai ada health-check gratis 12 titik: versi OS, celah keamanan, konfigurasi firewall, kecepatan, dan status backup — hasilnya berupa rapor tertulis + estimasi perbaikan. Semua pekerjaan terikat NDA dan kontrak tertulis.'],
+                    ['q' => 'Website / server saya sedang down sekarang. Bisa ditolong darurat?', 'a' => 'Bisa, itu layanan Rescue (one-time, tanpa langganan) Rp 750rb–2,5jt tergantung tingkat kerusakan — misalnya web disusupi judi online, database corrupt, atau VPS tidak bisa diakses. Alurnya: Anda kirim URL + kronologi via WhatsApp, kami diagnosa 30–60 menit dan sampaikan estimasi tertulis sebelum eksekusi. Rata-rata pulih 2–6 jam untuk kasus umum. Setelah pulih Anda terima laporan akar masalah + bukti backup + 3 rekomendasi agar tidak terulang. 90% klien rescue lanjut ke paket jaga bulanan karena jatuhnya lebih murah daripada bayar rescue berulang.'],
+                    ['q' => 'Apakah password, data, dan akses root saya aman di tangan Eraya?', 'a' => 'Aman dan terdokumentasi. Semua kredensial disimpan di password vault terenkripsi (bukan spreadsheet / chat), akses dibatasi hanya untuk engineer yang bertugas dan setiap login tercatat di log audit. Hak akses dibuat berlapis: engineer harian tidak memegang akses billing, dan Anda bisa mencabut akses kapan pun. Setiap kontrak mencakup klausul kerahasiaan dan serah-terima akses rapi bila berhenti — semua password diserahterimakan dan sesi lama dimatikan. Selama 5+ tahun menangani sekolah, klinik, dan puskesmas, tidak pernah ada kebocoran kredensial dari sisi kami.'],
+                    ['q' => 'Bisa bantu migrasi / pindah server tanpa website mati?', 'a' => 'Sangat bisa, dan gratis untuk pelanggan tahunan. Metodenya zero-downtime: kami siapkan server baru, salin file + database, uji penuh di staging (termasuk email, cron, dan SSL), sinkronisasi delta terakhir, baru alihkan DNS di jam sepi dengan TTL rendah — umumnya pengunjung tidak merasakan putus sama sekali. Termasuk pindah domain, email bisnis, dan penyesuaian DNS/SPF/DKIM agar email tidak masuk spam. Setelah migrasi ada masa pantau 7 hari: bila ada error terkait pemindahan, diperbaiki gratis. Rata-rata migrasi company profile 1–2 hari, aplikasi + database 3–7 hari tergantung ukuran data.'],
+                    ['q' => 'Kontrak minimal berapa lama? Bagaimana kalau mau berhenti?', 'a' => 'Bulanan, tanpa ikatan dan tanpa penalti — berhenti kapan pun dengan pemberitahuan 7 hari sebelum periode berakhir. Praktiknya 90% klien memilih tahunan karena gratis 2 bulan, prioritas rescue, dan migrasi gratis. Saat berhenti, Anda terima serah terima rapi: daftar seluruh akses, konfigurasi, jadwal backup, dan dokumentasi perubahan selama kami jaga — tidak ada sandera data atau vendor lock-in. Layanan yang sudah dibayar di bulan berjalan tetap dijaga sampai periode berakhir, dan backup terakhir diserahkan kepada Anda.'],
                 ],
                 'cta_judul' => 'Jangan Tunggu Down Baru Panik',
                 'cta_teks' => 'Klaim free health-check server (senilai Rp 500rb): kami kasih rapor 12 titik + 3 aksi prioritas. Tanpa komitmen.',

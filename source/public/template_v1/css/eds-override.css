@@ -1,0 +1,48 @@
+/* EDS override: font profesional + perbaikan kontras teks gelap-di-atas-gelap */
+:root{
+  --title-font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body-font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{
+  font-family:var(--body-font);
+  color:#D5DEEE;
+  letter-spacing:-.01em;
+}
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,
+.sec-title,.package-name,.service-title,.process-title,.media-title{
+  font-family:var(--title-font);
+  letter-spacing:-.03em;
+}
+/* Teks deskriptif di atas background navy gelap: paksa terang agar terbaca */
+.sec-text,
+.hero-layout1 .sec-text,
+.title-area .sec-text,
+.about-text,
+.footer-text,
+.service-style1 .service-text,
+.service-style3 .service-text,
+.process-style2 .process-text,
+.package-style1 .package-text,
+.package-style1 .list-style1 ul li,
+.faq-layout1 .accordion-body p,
+.team-style2 .degi,
+.media-info{
+  color:#D3DDF0 !important;
+}
+.service-style1 .service-title a{color:#fff !important}
+.service-style1:hover .service-text{color:var(--title-color) !important}
+.package-style1 .list-style1{background-color:#16294D !important}
+.package-style1 .list-style1 ul li i{color:var(--secondary-color) !important}
+/* Body artikel legal (kartu putih) tetap gelap agar terbaca */
+article,article p,article li{color:#334155}
+article h2{color:#1B2841}
+/* Breadcrumb aktif jangan putih polos di atas pill terang */
+.breadcrumb-item.active{color:#fff !important}
+/* Smooth scrolling global + offset header sticky */
+html{scroll-behavior:smooth}
+section[id],[id="layanan_kami"]{scroll-margin-top:90px}
+/* TOC legal: pastikan kolom jadi anchor tinggi penuh agar sticky bekerja */
+@media(min-width:992px){
+  [data-toc]{z-index:5}
+  [data-toc].is-fixed{position:fixed !important;top:90px;z-index:50;box-shadow:0 18px 40px rgba(2,95,202,.16)}
+}

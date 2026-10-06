@@ -36,7 +36,7 @@
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Anti-malware & Spam protection</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>1 Domain + Akses Webmail</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Maksimal 2 Pengguna Per Domain</li>
-                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email5GB Per Akun</li>
+                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email 5GB</li>
                                         </ul>
                                         <div class="shep">
                                             <img src="{{ asset('template_v1/img/shep/price-shape1.png') }}" alt="shep">
@@ -70,7 +70,7 @@
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Anti-malware & Spam protection</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>1 Domain + Akses Webmail</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Maksimal 5 Pengguna Per Domain</li>
-                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email 10GB Per Akun</li>
+                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email 10GB</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>100GB Penyimpanan Bersama</li>
                                         </ul>
                                         <div class="shep">
@@ -105,7 +105,7 @@
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Anti-malware & Spam protection</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Unlimited Domain</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Unlimited User Per Domain</li>
-                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email 50 GB Per Akun</li>
+                                            <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Kapasitas Email 15 GB Per Akun</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Management Akun & Domain</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Penyimpanan Terenkripsi Sebesar 1 TB</li>
                                             <li><span class="icon"><i class="fa-solid fa-shield-check"></i></span>Branding Domain & Mail Server</li>

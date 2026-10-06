@@ -279,12 +279,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/developer.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'pengembangan-aplikasi') }}">Pengembangan Aplikasi</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'erp') }}">ERP & Sistem Terintegrasi</a></h2>
                             <p class="service-text text-center">
-                                Ingin merubah bisnis manual kamu menjadi digital agar dapat termonitoring secara akurat dan mudah serta dilihat banyak orang.
+                                Satu sistem untuk keuangan, inventory, HRD, dan operasional — terhubung real-time antar divisi dan cabang.
                             </p>
                         </div>
-                        <a href="{{ route('layanan.detail', 'pengembangan-aplikasi') }}" class="icon-btn"><i
+                        <a href="{{ route('layanan.detail', 'erp') }}" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -302,12 +302,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/logo_ai.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'ai-otomatisasi') }}">AI Agentic</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="AI Agentic">AI Agentic</a></h2>
                             <p class="service-text text-center">
                                 Kami membangun chatbot, agen AI, dan otomatisasi alur kerja untuk memangkas pekerjaan manual, mempercepat layanan, dan mengoptimalkan operasional bisnis Anda.
                             </p>
                         </div>
-                        <a href="{{ route('layanan.detail', 'ai-otomatisasi') }}" class="icon-btn"><i
+                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="AI Agentic" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -325,12 +325,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/logo_iot.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'iot-smart-devices') }}">IoT & Smart Devices</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="IoT & Smart Devices">IoT & Smart Devices</a></h2>
                             <p class="service-text text-center">
                                 Kami merancang solusi Internet of Things (IoT) — monitoring sensor, smart device, dan integrasi cloud — untuk memantau aset, ruangan, dan operasional secara real-time.
                             </p>
                         </div>
-                        <a href="{{ route('layanan.detail', 'iot-smart-devices') }}" class="icon-btn"><i
+                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="IoT & Smart Devices" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -348,12 +348,12 @@ Hero Area
                     <div class="service-style1">
                         <div class="service-body">
                             <img src="{{ asset('template_v1/img/icon/umkm.svg') }}" alt="icon">
-                            <h2 class="service-title h6 text-center"><a href="{{ route('layanan.detail', 'umkm-digital') }}">UMKM</a></h2>
+                            <h2 class="service-title h6 text-center"><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="UMKM Digital">UMKM</a></h2>
                             <p class="service-text text-center">
                                 Mengembangkan usaha anda dengan bantuan teknologi, ayo konsultasikan masalah anda kepada kami serta akan membantu sepenuh hati
                             </p>
                         </div>
-                        <a href="{{ route('layanan.detail', 'umkm-digital') }}" class="icon-btn"><i
+                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modalComingSoon" data-layanan="UMKM Digital" class="icon-btn"><i
                                 class="fa-regular fa-arrow-right"></i></a>
                         <div class="shep-btn">
                             <svg width="72" height="72" viewBox="0 0 111 111" fill="none"
@@ -814,6 +814,33 @@ Hero Area
     <div id="process-particle2" style="bottom: 0%; right: 0%; width: 30%; height: 50%; z-index: 0;"><canvas
             class="particles-js-canvas-el"></canvas></div>
 </section>
+
+{{-- ===== MODAL COMING SOON (AI, IoT, UMKM) : detail file tetap ada, tidak dihapus ===== --}}
+<div class="modal fade eds-modal eds-comingsoon" id="modalComingSoon" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="cs-badge"><i class="fa-solid fa-rocket"></i> COMING SOON</span>
+          <h5 class="modal-title mt-2"><span id="csLayanan">Layanan</span> lagi disiapkan 🚀</h5>
+          <p>Halaman detailnya sudah ada, tapi belum kami publish. Tinggalkan kontak — kami kabari saat launching.</p>
+        </div>
+        <button type="button" class="eds-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="cs-orb"><i class="fa-solid fa-hourglass-half"></i></div>
+        <h6 class="cs-title">Sesuatu yang keren sedang dirakit</h6>
+        <p class="cs-text">Tim kami lagi finalisasi paket, harga, dan demo untuk <strong id="csLayanan2">layanan ini</strong>. Butuh sekarang? Konsultasi dulu aja — gratis, fast respon &lt; 1 jam kerja.</p>
+        <div class="cs-progress"><span></span></div>
+        <p class="cs-hint">Progress launching: 85%</p>
+      </div>
+      <div class="modal-footer d-flex gap-2 justify-content-center flex-wrap">
+        <a href="{{ route('layanan.hubungi_kami') }}" class="vs-btn">💬 Konsultasi Gratis</a>
+        <button type="button" class="vs-btn style2" data-bs-dismiss="modal">Lihat Layanan Lain</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 @section('css_load')
 <link rel="stylesheet" href="{{ asset('template_v1/sass/template/meteor.css') }}">
@@ -821,6 +848,26 @@ Hero Area
 .vs-btn{
     border-radius: 20px;
 }
+.vs-btn.style2{background:#0b1220;color:#fff;border:1px solid #e2e8f0}
+/* ===== Coming Soon modal ===== */
+.eds-comingsoon .modal-content{border:0;border-radius:24px;overflow:hidden;background:#fff !important}
+.eds-comingsoon .modal-header{border:0;padding:26px 28px;background:linear-gradient(135deg,#0b3b7a 0%,#0ea5e9 55%,#3EC964 100%) !important;align-items:flex-start;gap:16px}
+.eds-comingsoon .modal-header .modal-title{font-weight:800;font-size:1.25rem;color:#fff !important}
+.eds-comingsoon .modal-header p{margin:6px 0 0;font-size:.88rem;color:rgba(255,255,255,.92) !important}
+.cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:800;font-size:12px;letter-spacing:.12em;padding:7px 14px;border-radius:30px;backdrop-filter:blur(6px)}
+.cs-badge i{animation:csfloat 2.2s ease-in-out infinite}
+.eds-comingsoon .eds-close{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:#fff !important;color:#1B2841 !important;font-size:24px;font-weight:700;line-height:1;border:0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25);opacity:1;cursor:pointer}
+.eds-comingsoon .modal-body{padding:30px 28px 10px;background:#fff !important}
+.cs-orb{width:84px;height:84px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;color:#fff;background:linear-gradient(135deg,#025FCA,#3EC964);box-shadow:0 14px 34px rgba(2,95,202,.35);animation:csfloat 2.6s ease-in-out infinite}
+.cs-title{color:#1B2841 !important;font-weight:800;margin-bottom:8px}
+.cs-text{color:#475569 !important;font-size:.93rem;line-height:1.7}
+.cs-text strong{color:#1B2841 !important}
+.cs-progress{height:10px;border-radius:20px;background:#e8eef7;overflow:hidden;margin:18px 0 8px}
+.cs-progress span{display:block;height:100%;width:85%;border-radius:20px;background:linear-gradient(90deg,#025FCA,#3EC964,#FFA41C);background-size:200% 100%;animation:csload 2.4s linear infinite}
+.cs-hint{font-size:12px;color:#8496ac !important;margin-bottom:0}
+.eds-comingsoon .modal-footer{border:0;padding:18px 28px 24px;background:#f1f7f3 !important}
+@keyframes csfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes csload{0%{background-position:0% 0}100%{background-position:200% 0}}
 /* ===== Layanan: gambar rata & rapi ===== */
 #layanan_kami .service-style1{
     height: 100%;
@@ -934,4 +981,19 @@ Hero Area
 </style>
 @endsection
 @section('js_load')
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var modal=document.getElementById('modalComingSoon');
+  if(modal){
+    modal.addEventListener('show.bs.modal',function(e){
+      var btn=e.relatedTarget;
+      var nama=(btn&&btn.getAttribute('data-layanan'))||'Layanan';
+      var t1=document.getElementById('csLayanan');
+      var t2=document.getElementById('csLayanan2');
+      if(t1)t1.textContent=nama;
+      if(t2)t2.textContent=nama;
+    });
+  }
+});
+</script>
 @endsection

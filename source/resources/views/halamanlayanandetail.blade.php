@@ -190,40 +190,26 @@
     </div>
 </section>
 
-{{-- ===== KENAPA KAMI + TESTIMONI ===== --}}
+{{-- ===== KENAPA KAMI (testimoni dihapus) ===== --}}
 <section class="space-bottom">
     <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="title-area text-left">
+        <div class="row g-5 align-items-start justify-content-center">
+            <div class="col-lg-8">
+                <div class="title-area text-center">
                     <span class="sec-subtitle2">Kenapa Eraya?</span>
-                    <h2 class="sec-title">Vendor Boleh Banyak, Yang Amanah & Nempel Terus Cuma Kami 😎</h2>
+                    <h2 class="sec-title">Vendor Boleh Banyak, Yang Amanah & Nempel Terus Cuma Kami</h2>
                 </div>
                 <ul class="list-unstyled" style="display:grid;gap:12px">
                     @foreach($layanan['kenapa'] as $k)
-                    <li style="background:#f0f9ff;border:1px solid #d9ecff;border-radius:14px;padding:12px 16px;font-size:15px"><i class="fa-solid fa-circle-check" style="color:#0ea5e9"></i> {{ $k }}</li>
+                    <li style="background:#f0f9ff;border:1px solid #d9ecff;border-radius:14px;padding:12px 16px;font-size:15px;color:#1B2841 !important"><i class="fa-solid fa-circle-check" style="color:#0ea5e9"></i> {{ $k }}</li>
                     @endforeach
                 </ul>
-                <div class="d-flex gap-3 flex-wrap mt-4">
+                <div class="d-flex gap-3 flex-wrap mt-4 justify-content-center">
                     <a href="{{ route('layanan.hubungi_kami') }}" class="vs-btn">Chat WhatsApp Sekarang</a>
                     <a href="{{ url('/#layanan_kami') }}" class="vs-btn style2">← Lihat Layanan Lain</a>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div style="background:#0b1220;border-radius:24px;padding:36px;color:#fff;position:relative;overflow:hidden">
-                    <div style="font-size:46px;line-height:1">“</div>
-                    <p style="font-size:18px;line-height:1.7;color:#e8f3ff">{{ $layanan['testimoni']['teks'] }}</p>
-                    <div class="d-flex align-items-center gap-3 mt-3">
-                        <img src="https://api.dicebear.com/9.x/initials/png?seed={{ urlencode($layanan['testimoni']['nama']) }}&backgroundColor=0ea5e9" alt="testimoni" style="width:52px;height:52px;border-radius:50%;background:#fff">
-                        <div>
-                            <strong>{{ $layanan['testimoni']['nama'] }}</strong><br>
-                            <small style="color:#93a7be">{{ $layanan['testimoni']['jabatan'] }}</small>
-                            <div style="color:#fbbf24;font-size:13px">★★★★★ Terverifikasi</div>
-                        </div>
-                    </div>
-                    <div class="mt-4" style="background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;font-size:13px;color:#c6d6e8">
-                        📌 <strong>Garansi kami:</strong> kalau di 14 hari pertama kamu merasa tidak cocok (sebelum production), kami kembalikan DP 100%. Tanpa drama.
-                    </div>
+                <div class="mt-4" style="background:#0b1220;border-radius:14px;padding:14px 16px;font-size:13px;color:#c6d6e8;text-align:center">
+                    📌 <strong>Garansi kami:</strong> kalau di 14 hari pertama kamu merasa tidak cocok (sebelum production), kami kembalikan DP 100%. Tanpa drama.
                 </div>
             </div>
         </div>
@@ -273,13 +259,18 @@
 <section style="padding:0 0 60px">
     <div class="container">
         <div style="background:linear-gradient(135deg,#0b3b7a,#0ea5e9);border-radius:28px;padding:48px 36px;text-align:center;color:#fff;position:relative;overflow:hidden">
-            <h2 class="h2 mb-3" style="color:#fff;font-weight:800">{{ $layanan['cta_judul'] }}</h2>
+            @if($slug==='erp')
+            <span style="display:inline-flex;align-items:center;gap:8px;background:#FFA41C;color:#1B2841;font-weight:800;font-size:13px;letter-spacing:.08em;padding:8px 18px;border-radius:30px">🎁 PAKET ERP BISNIS GRATIS</span>
+            @endif
+            <h2 class="h2 mb-3 mt-2" style="color:#fff;font-weight:800">{{ $layanan['cta_judul'] }}</h2>
             <p style="max-width:640px;margin:0 auto 24px;color:#e0f2ff">{{ $layanan['cta_teks'] }}</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="{{ route('layanan.hubungi_kami') }}?layanan={{ $layanan['slug'] }}" class="vs-btn" style="background:#fff;color:#0b3b7a">🚀 Amankan Slot Gratis Saya</a>
-                <a href="{{ url('/#layanan_kami') }}" style="color:#fff;text-decoration:underline;align-self:center">atau jelajahi layanan lain →</a>
+            @if($slug==='erp')
+            <div class="d-flex gap-2 justify-content-center flex-wrap mb-4" style="font-size:13px">
+                <span style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:20px">✅ Landing page 2 halaman</span>
+                <span style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:20px">✅ Katalog online + checkout WA</span>
+                <span style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:20px">✅ Domain .com 1 tahun</span>
             </div>
-            <small class="d-block mt-3" style="color:#c9e7ff">⏳ Promo sesi gratis berlaku untuk 10 pendaftar pertama bulan ini</small>
+            @endif
         </div>
 
         {{-- LAYANAN TERKAIT --}}
